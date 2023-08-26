@@ -5,14 +5,14 @@
       "name": "Beef Bhuna",
       "image": "https://cookbook.pfeiffer.net.au/files/beefBhuna.jpg",
       "description": "Beef Bhuna is my favorite dish!",
-      "isFavorite": false
+      "isFavorite": true
     },
     {
       "id": 2,
       "name": "Khashi Bhuna",
       "image": "https://uploads-ssl.webflow.com/5c481361c604e53624138c2f/5c5784dd46836abe97e82a07_kosha-mangsho-website-thumbnail-_p4nuue.png",
       "description": "I like Khashi Bhuna with Khichuri!",
-      "isFavorite": false
+      "isFavorite": true
     },
     {
       "id": 3,

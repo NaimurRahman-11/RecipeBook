@@ -17,7 +17,16 @@
         >
           <button @click="openModal(recipe)" class="btn btn-primary">View</button>
           <div>
-            <i class="fa-solid fa-heart fa-lg me-5"></i>
+            <i
+      @click="toggleFavorite(recipe)"
+      v-if="recipe.isFavorite"
+      class="fa-solid fa-heart fa-lg me-5 text-danger"
+    ></i>
+    <i
+      @click="toggleFavorite(recipe)"
+      v-else
+      class="fa-solid fa-heart fa-lg me-5"
+    ></i>
             <i
               @click="onDelete(recipe.id)"
               class="fa-solid fa-trash fa-lg text-danger"
@@ -49,6 +58,9 @@
 </template>
 
 <script>
+
+import Swal from 'sweetalert2';
+
 export default {
   name: "Recipes",
   props: {
@@ -72,6 +84,33 @@ export default {
       const modal = new bootstrap.Modal(document.getElementById('recipeModal'));
       modal.show();
     },
+
+    async toggleFavorite(recipe) {
+    recipe.isFavorite = !recipe.isFavorite;
+    
+    // Update the backend database
+    try {
+      await fetch(`http://localhost:5000/recipes/${recipe.id}`, {
+        method: 'PATCH', // Use PATCH to update existing resource
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ isFavorite: recipe.isFavorite }),
+      });
+    } catch (error) {
+      console.error('Failed to update favorite status:', error);
+    }
+
+    if (recipe.isFavorite) {
+      await Swal.fire({
+        icon: 'success',
+        title: 'Added to Favorites!',
+        text: 'This recipe has been added to your favorites.',
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
+  },
   },
 };
 </script>

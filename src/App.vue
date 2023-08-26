@@ -4,7 +4,12 @@
   <div v-if="showAddRecipe">
     <AddRecipe @add-recipe="addRecipe" />
   </div>
-  <Recipes :recipes="recipes" @delete-recipe="deleteRecipe"/>
+  <div class="mt-3">
+      <button @click="toggleFilter" class="btn btn-primary">
+        {{ showFavorites ? 'Show All' : 'Show Favorites' }}
+      </button>
+    </div>
+  <Recipes :recipes="filteredRecipes" @delete-recipe="deleteRecipe"/>
   <Footer />
  </div>
 </template>
@@ -30,10 +35,16 @@ export default {
     return{
       recipes:[],
       showAddRecipe: false,
+      showFavorites: false,
     }
   },
 
 methods:{
+
+toggleFilter() {
+      this.showFavorites = !this.showFavorites;
+    },
+
   toggleAddRecipe(){
     this.showAddRecipe = !this.showAddRecipe
   },
@@ -99,6 +110,16 @@ methods:{
     return data
   }
 },
+
+ computed: {
+    filteredRecipes() {
+      if (this.showFavorites) {
+        return this.recipes.filter(recipe => recipe.isFavorite);
+      } else {
+        return this.recipes;
+      }
+    },
+  },
 
  async created(){
     this.recipes = await this.fetchRecipes()
