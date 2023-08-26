@@ -5,7 +5,7 @@
     <img
       src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/0845c232253239.56766f2d063c9.gif"
       class="img-fluid"
-      alt=""
+      alt="" style="max-width: 300px; height: auto;"
     />
     <div class="d-flex p-2 align-items-center">
       <h1 class="text-center me-5">Recipe Book</h1>

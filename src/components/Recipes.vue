@@ -46,7 +46,7 @@
       aria-labelledby="recipeModalLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="recipeModalLabel">
@@ -141,25 +141,24 @@ export default {
 <style scoped>
 /* Add hover animation to the delete icon */
 .fa-trash:hover {
-  transform: scale(1.2); /* Increase the size on hover */
-  transition: transform 0.3s ease-in-out; /* Apply smooth transition */
+  
   cursor: pointer;
 }
 
 /* Add hover animation to other icons if needed */
 .fa-heart:hover {
-  transform: scale(1.2);
-  color: red; /* Change color on hover */
-  transition: color 0.3s ease-in-out; /* Apply smooth color transition */
+  
   cursor: pointer;
 }
 
 .card {
-  transition: transform 0.3s linear; /* Use linear transition for smoother in and out */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Add box-shadow transition */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Initial shadow */
 }
 
 .card:hover {
-  transform: scale(1.1);
+  transform: scale(1.02); /* Apply slight zoom on hover */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
 }
 
 .text-justify {

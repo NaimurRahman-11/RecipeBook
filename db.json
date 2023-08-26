@@ -1,28 +1,6 @@
 {
   "recipes": [
     {
-      "name": "গরুর মগজ ভুনা",
-      "image": "https://img-global.cpcdn.com/recipes/30e887ee4d6ccc2f/1200x630cq70/photo.jpg",
-      "description": "\"গরুর মগজ ভুনা\" বাঙালি খাবারের একটি প্রান্তিক রুচিকর বিশেষতঃ গরুর মগজ দিয়ে তৈরি হয়। সামান্য মসলা দিয়ে স্বাদ যোগ করা হয়, এই আহার বাঙালি খাদ্য প্রেমিকদের মধ্যে বিশেষ জনপ্রিয়। ঘরে তৈরি করা হয়, যা পরিবারে আনন্দ তৈরি করে।",
-      "ingredients": [
-        "৪০০ গ্রাম ‏গরু বা খাসির মগজ",
-        "২ টেবিল চামচ ‏পেয়াজ কুচি",
-        "১/২ চা চামচ ‏আদা বাটা",
-        "১/২ চামচ ‏রসুন বাটা",
-        "১/২ চা চামচ ‏জিরা গুড়া",
-        "১/২ চা চামচ ‏হলুদ গুড়া",
-        "১ চা চামচ ‏শুকনো মরিচের গুড়া",
-        "১/২ চা চামচ ‏দারুচিনি",
-        "১/২ চা চামচ ‏এলাচ গুড়া",
-        "৩ টেবিল চামচ ‏সয়াবিন তেল",
-        "১টি ‏তেজপাতা",
-        "১/৪ চা চামচ ‏গোল মরিচের গুড়া",
-        "৩/৪ টি ‏কাচা মরিচ",
-        "পরিমানমত ‏লবণ"
-      ],
-      "id": 2
-    },
-    {
       "name": "Beef Bhuna",
       "image": "https://cookbook.pfeiffer.net.au/files/beefBhuna.jpg",
       "description": "This recipe for bhuna gorur mangsho produces a dish that is rich and intense in character from the caramelization of the onions and the frying of the spices. The meat cooks in its own juices, giving the dish a deep flavor. It is a classic Bengali dish.",
@@ -62,7 +40,8 @@
         "Salt (to taste)",
         "Fresh coriander leaves (for garnishing)"
       ],
-      "id": 4
+      "id": 4,
+      "isFavorite": false
     },
     {
       "name": "Kacchi Biryani",
