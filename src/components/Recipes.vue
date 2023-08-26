@@ -10,7 +10,7 @@
         />
         <div class="card-body">
           <h5 class="card-title">{{ recipe.name }}</h5>
-          <p class="card-text">{{}}</p>
+          <p class="card-text">{{recipe.description}}</p>
         </div>
         <div
           class="card-footer d-flex align-items-center justify-content-between"
@@ -18,7 +18,7 @@
           <button class="btn btn-primary">View</button>
           <div>
             <i class="fa-solid fa-heart fa-lg me-5"></i>
-            <i class="fa-solid fa-trash fa-lg text-danger"></i>
+            <i @click="onDelete(recipe.id)" class="fa-solid fa-trash fa-lg text-danger"></i>
           </div>
         </div>
       </div>
@@ -32,6 +32,13 @@ export default {
   props: {
     recipes: Array,
   },
+
+  methods: {
+    onDelete(id){
+      this.$emit('delete-recipe', id)
+    }
+  },
+
 };
 </script>
 

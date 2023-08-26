@@ -1,8 +1,10 @@
 <template>
  <div class="container">
-  <HeadSection />
-  <AddRecipe />
-  <Recipes :recipes="recipes" />
+  <HeadSection @toggle-add-recipe="toggleAddRecipe" :showAddRecipe="showAddRecipe" />
+  <div v-if="showAddRecipe">
+    <AddRecipe @add-recipe="addRecipe" />
+  </div>
+  <Recipes :recipes="recipes" @delete-recipe="deleteRecipe"/>
   <Footer />
  </div>
 </template>
@@ -12,6 +14,7 @@ import HeadSection from './components/HeadSection.vue'
 import Footer from './components/Footer'
 import Recipes from './components/Recipes'
 import AddRecipe from './components/AddRecipe'
+import Swal from 'sweetalert2';
 
 
 export default {
@@ -25,33 +28,80 @@ export default {
   
   data(){
     return{
-      recipes:[]
+      recipes:[],
+      showAddRecipe: false,
     }
   },
 
-  created(){
-    this.recipes = [
-      {
-        id: 1,
-        name: 'Beef Bhuna',
-        image: 'https://cookbook.pfeiffer.net.au/files/beefBhuna.jpg'
+methods:{
+  toggleAddRecipe(){
+    this.showAddRecipe = !this.showAddRecipe
+  },
+
+  async addRecipe(recipe){
+    const res = await fetch('http://localhost:5000/recipes', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+
       },
-      {
-        id: 2,
-        name: 'Khashi Bhuna',
-        image: 'https://uploads-ssl.webflow.com/5c481361c604e53624138c2f/5c5784dd46836abe97e82a07_kosha-mangsho-website-thumbnail-_p4nuue.png'
-      },
-      {
-        id: 3,
-        name: 'Murgi Bhuna',
-        image: 'https://grubvineweb.com/wp-content/uploads/2022/08/Chicken-Bhuna-Masala-Recipe-Main-Image-Grubvineweb.webp'
-      },
-      {
-        id: 4,
-        name: 'Fish Curry',
-        image: 'https://www.tamarindnthyme.com/wp-content/uploads/2020/10/Untitled-design-91-728x546.jpg.webp'
+      body: JSON.stringify(recipe),
+    })
+
+    const data = await res.json()
+
+    this.recipes = [...this.recipes, data]
+  },
+
+
+  async deleteRecipe(id){
+
+ // Show a confirmation dialog using SweetAlert
+      const result = await Swal.fire({
+        title: 'Are you sure?',
+        text: 'You will not be able to recover this recipe!',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Yes, delete it!',
+        cancelButtonText: 'Cancel',
+        reverseButtons: true,
+      });
+
+    if (result.isConfirmed) {
+        const res = await fetch(`http://localhost:5000/recipes/${id}`, {
+          method: 'DELETE',
+        });
+
+        if (res.ok) {
+          // Remove the deleted recipe from the recipes array
+          this.recipes = this.recipes.filter((recipe) => recipe.id !== id);
+          // Show success alert
+          Swal.fire({
+            icon: 'success',
+            title: 'Deleted!',
+            text: 'Recipe has been deleted.',
+          });
+        } else {
+          console.error('Failed to delete recipe');
+        }
       }
-    ]
+  },
+
+  async fetchRecipes(){
+    const res = await fetch('http://localhost:5000/recipes')
+    const data = await res.json()
+    return data
+  },
+
+  async fetchRecipe(id){
+    const res = await fetch(`http://localhost:5000/recipes/${id}`)
+    const data = await res.json()
+    return data
+  }
+},
+
+ async created(){
+    this.recipes = await this.fetchRecipes()
   }
 }
 </script>
