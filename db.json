@@ -4,25 +4,29 @@
       "id": 1,
       "name": "Beef Bhuna",
       "image": "https://cookbook.pfeiffer.net.au/files/beefBhuna.jpg",
-      "description": "Beef Bhuna is my favorite dish!"
+      "description": "Beef Bhuna is my favorite dish!",
+      "isFavorite": false
     },
     {
       "id": 2,
       "name": "Khashi Bhuna",
       "image": "https://uploads-ssl.webflow.com/5c481361c604e53624138c2f/5c5784dd46836abe97e82a07_kosha-mangsho-website-thumbnail-_p4nuue.png",
-      "description": "I like Khashi Bhuna with Khichuri!"
+      "description": "I like Khashi Bhuna with Khichuri!",
+      "isFavorite": false
     },
     {
       "id": 3,
       "name": "Murgi Bhuna",
       "image": "https://grubvineweb.com/wp-content/uploads/2022/08/Chicken-Bhuna-Masala-Recipe-Main-Image-Grubvineweb.webp",
-      "description": "I don't like Murgi Bhuna much!"
+      "description": "I don't like Murgi Bhuna much!",
+      "isFavorite": true
     },
     {
       "id": 4,
       "name": "Fish Curry",
       "image": "https://www.tamarindnthyme.com/wp-content/uploads/2020/10/Untitled-design-91-728x546.jpg.webp",
-      "description": "Fish Curry is for pure Bengali!"
+      "description": "Fish Curry is for pure Bengali!",
+      "isFavorite": true
     }
   ]
 }
