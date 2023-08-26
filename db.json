@@ -1,25 +1,116 @@
 {
   "recipes": [
     {
-      "id": 1,
+      "name": "গরুর মগজ ভুনা",
+      "image": "https://img-global.cpcdn.com/recipes/30e887ee4d6ccc2f/1200x630cq70/photo.jpg",
+      "description": "\"গরুর মগজ ভুনা\" বাঙালি খাবারের একটি প্রান্তিক রুচিকর বিশেষতঃ গরুর মগজ দিয়ে তৈরি হয়। সামান্য মসলা দিয়ে স্বাদ যোগ করা হয়, এই আহার বাঙালি খাদ্য প্রেমিকদের মধ্যে বিশেষ জনপ্রিয়। ঘরে তৈরি করা হয়, যা পরিবারে আনন্দ তৈরি করে।",
+      "ingredients": [
+        "৪০০ গ্রাম ‏গরু বা খাসির মগজ",
+        "২ টেবিল চামচ ‏পেয়াজ কুচি",
+        "১/২ চা চামচ ‏আদা বাটা",
+        "১/২ চামচ ‏রসুন বাটা",
+        "১/২ চা চামচ ‏জিরা গুড়া",
+        "১/২ চা চামচ ‏হলুদ গুড়া",
+        "১ চা চামচ ‏শুকনো মরিচের গুড়া",
+        "১/২ চা চামচ ‏দারুচিনি",
+        "১/২ চা চামচ ‏এলাচ গুড়া",
+        "৩ টেবিল চামচ ‏সয়াবিন তেল",
+        "১টি ‏তেজপাতা",
+        "১/৪ চা চামচ ‏গোল মরিচের গুড়া",
+        "৩/৪ টি ‏কাচা মরিচ",
+        "পরিমানমত ‏লবণ"
+      ],
+      "id": 2
+    },
+    {
       "name": "Beef Bhuna",
       "image": "https://cookbook.pfeiffer.net.au/files/beefBhuna.jpg",
-      "description": "Beef Bhuna is my favorite dish!",
+      "description": "This recipe for bhuna gorur mangsho produces a dish that is rich and intense in character from the caramelization of the onions and the frying of the spices. The meat cooks in its own juices, giving the dish a deep flavor. It is a classic Bengali dish.",
+      "ingredients": [
+        "500 grams Beef (cubed)",
+        "3 tablespoons Cooking oil",
+        "2 Onions (sliced)",
+        "1 tablespoon Ginger paste",
+        "1 tablespoon Garlic paste",
+        "2 Tomatoes (chopped)",
+        "2-3 Green chilies (sliced)",
+        "1 teaspoon Red chili powder",
+        "1/2 teaspoon Turmeric powder",
+        "1 teaspoon Cumin powder",
+        "1 teaspoon Coriander powder",
+        "1/2 teaspoon Garam masala powder",
+        "Salt (to taste)",
+        "1/2 cup Water",
+        "Fresh coriander leaves (for garnishing)"
+      ],
+      "id": 3
+    },
+    {
+      "name": "Loitta Shutki Bhuna",
+      "image": "https://images.squarespace-cdn.com/content/v1/5ea5f3913b0ccf06d0ec2563/b4f80910-4e22-400a-8754-ff2e44a98987/Pohela+Boishakh+2021+-+The+Spice+Odyssey+%2825%29.jpg",
+      "description": "\"Loitta Shutki Bhuna\" is a traditional Bengali dish made from dried Bombay duck fish. It's a flavorful delicacy where dried fish is sautéed with spices, onions, and green chilies. This dish is cherished for its unique taste and cultural significance in Bengali cuisine.",
+      "ingredients": [
+        "200 grams Dried Bombay duck fish (Loitta Shutki)",
+        "3 tablespoons Cooking oil",
+        "2 Onions (sliced)",
+        "1 tablespoon Garlic paste",
+        "3-4 Green chilies (sliced)",
+        "1/2 teaspoon Turmeric powder",
+        "1 teaspoon Red chili powder",
+        "1 teaspoon Cumin powder",
+        "1 teaspoon Coriander powder",
+        "Salt (to taste)",
+        "Fresh coriander leaves (for garnishing)"
+      ],
+      "id": 4
+    },
+    {
+      "name": "Kacchi Biryani",
+      "image": "https://www.dhakafoodster.com/wp-content/uploads/2021/09/Tradition-BD-Kacchi-Combo-Meal11.png",
+      "description": "\"Kacchi Biryani\" is a fragrant and flavorful South Asian rice dish. Marinated raw meat is layered with aromatic spices, herbs, and partially cooked basmati rice. The dish is slow-cooked, allowing the meat to tenderize and the flavors to meld. The result is a delightful blend of textures and tastes, making it a cherished culinary experience.",
+      "ingredients": [
+        "500 grams Basmati rice",
+        "750 grams Marinated meat (chicken or mutton)",
+        "Onions",
+        "Yogurt",
+        "Ginger-garlic paste",
+        "Biryani masala",
+        "Saffron strands",
+        "Ghee",
+        "Fresh mint and coriander leaves",
+        "Green chilies",
+        "Whole spices (cinnamon, cardamom, cloves)",
+        "Salt",
+        "Water"
+      ],
+      "id": 5,
       "isFavorite": true
     },
     {
-      "id": 2,
-      "name": "Khashi Bhuna",
-      "image": "https://uploads-ssl.webflow.com/5c481361c604e53624138c2f/5c5784dd46836abe97e82a07_kosha-mangsho-website-thumbnail-_p4nuue.png",
-      "description": "I like Khashi Bhuna with Khichuri!",
-      "isFavorite": true
-    },
-    {
-      "id": 3,
-      "name": "Murgi Bhuna",
-      "image": "https://grubvineweb.com/wp-content/uploads/2022/08/Chicken-Bhuna-Masala-Recipe-Main-Image-Grubvineweb.webp",
-      "description": "I don't like Murgi Bhuna much!",
-      "isFavorite": false
+      "name": "Beef Kala Bhuna",
+      "image": "https://img-global.cpcdn.com/recipes/2cca2e5dd84f3d3c/1200x630cq70/photo.jpg",
+      "description": "\"Beef Kala Bhuna\" is a rich and intensely flavored Bengali dish. Cubes of beef are slow-cooked with a medley of spices until they develop a deep, dark color and a robust taste. The dish is a testament to the art of slow-cooking and the blend of spices that define Bengali cuisine.",
+      "ingredients": [
+        "500 grams Beef (cubed)",
+        "Onions",
+        "Ginger paste",
+        "Garlic paste",
+        "Red chili powder",
+        "Turmeric powder",
+        "Coriander powder",
+        "Cumin powder",
+        "Garam masala powder",
+        "Mustard oil",
+        "Green chilies",
+        "Bay leaves",
+        "Cinnamon stick",
+        "Cardamom pods",
+        "Cloves",
+        "Salt",
+        "Water",
+        "Fresh coriander leaves (for garnishing)"
+      ],
+      "id": 6
     }
   ]
 }

@@ -14,7 +14,7 @@
         :class="{ 'btn-primary': !showAddRecipe, 'btn-danger': showAddRecipe }"
         class="btn"
       >
-         {{ showAddRecipe ? 'Close' : 'Add Recipe' }}
+        {{ showAddRecipe ? "Close" : "Add Recipe" }}
       </button>
     </div>
   </div>
@@ -24,7 +24,6 @@
 export default {
   name: "HeadSection",
   props: {
-    
     showAddRecipe: Boolean,
   },
   methods: {

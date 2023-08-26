@@ -1,6 +1,6 @@
 <template>
-  <div class="row row-cols-1 row-cols-md-3 g-5 mt-5 mb-5">
-    <div v-for="recipe in recipes" :key="recipe.id" class="col ">
+  <div class="row row-cols-1 row-cols-md-3 g-5 mt-2 mb-5">
+    <div v-for="recipe in recipes" :key="recipe.id" class="col">
       <div class="card h-100 shadow">
         <img
           :src="recipe.image"
@@ -9,24 +9,26 @@
           :style="{ objectFit: 'cover', height: '250px' }"
         />
         <div class="card-body">
-          <h5 class="card-title">{{ recipe.name }}</h5>
-          <p class="card-text">{{ recipe.description }}</p>
+          <h5 class="card-title fw-bold">{{ recipe.name }}</h5>
+          <p class="card-text text-justify">{{ recipe.description }}</p>
         </div>
         <div
           class="card-footer d-flex align-items-center justify-content-between"
         >
-          <button @click="openModal(recipe)" class="btn btn-primary">View</button>
+          <button @click="openModal(recipe)" class="btn btn-primary">
+            View
+          </button>
           <div>
             <i
-      @click="toggleFavorite(recipe)"
-      v-if="recipe.isFavorite"
-      class="fa-solid fa-heart fa-lg me-5 text-danger"
-    ></i>
-    <i
-      @click="toggleFavorite(recipe)"
-      v-else
-      class="fa-solid fa-heart fa-lg me-5"
-    ></i>
+              @click="toggleFavorite(recipe)"
+              v-if="recipe.isFavorite"
+              class="fa-solid fa-heart fa-lg me-5 text-danger"
+            ></i>
+            <i
+              @click="toggleFavorite(recipe)"
+              v-else
+              class="fa-solid fa-heart fa-lg me-5"
+            ></i>
             <i
               @click="onDelete(recipe.id)"
               class="fa-solid fa-trash fa-lg text-danger"
@@ -36,30 +38,51 @@
       </div>
     </div>
 
-
- <!-- Modal for displaying recipe details -->
-  <div class="modal fade" id="recipeModal" tabindex="-1" aria-labelledby="recipeModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="recipeModalLabel">{{ selectedRecipe.name }}</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <img :src="selectedRecipe.image" alt="Recipe Image" class="img-fluid mb-3" />
-          <p>{{ selectedRecipe.description }}</p>
+    <!-- Modal for displaying recipe details -->
+    <div
+      class="modal fade"
+      id="recipeModal"
+      tabindex="-1"
+      aria-labelledby="recipeModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="recipeModalLabel">
+              {{ selectedRecipe.name }}
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <img
+              :src="selectedRecipe.image"
+              alt="Recipe Image"
+              class="img-fluid mb-3"
+            />
+            <h5 class="fw-bold">Ingredients:</h5>
+            <ul>
+              <li
+                v-for="ingredient in selectedRecipe.ingredients"
+                :key="ingredient"
+              >
+                {{ ingredient }}
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
-
-  </div>
 </template>
 
 <script>
-
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 
 export default {
   name: "Recipes",
@@ -81,36 +104,36 @@ export default {
     openModal(recipe) {
       this.selectedRecipe = recipe; // Set the selected recipe data
       // Show the modal
-      const modal = new bootstrap.Modal(document.getElementById('recipeModal'));
+      const modal = new bootstrap.Modal(document.getElementById("recipeModal"));
       modal.show();
     },
 
     async toggleFavorite(recipe) {
-    recipe.isFavorite = !recipe.isFavorite;
-    
-    // Update the backend database
-    try {
-      await fetch(`http://localhost:5000/recipes/${recipe.id}`, {
-        method: 'PATCH', // Use PATCH to update existing resource
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ isFavorite: recipe.isFavorite }),
-      });
-    } catch (error) {
-      console.error('Failed to update favorite status:', error);
-    }
+      recipe.isFavorite = !recipe.isFavorite;
 
-    if (recipe.isFavorite) {
-      await Swal.fire({
-        icon: 'success',
-        title: 'Added to Favorites!',
-        text: 'This recipe has been added to your favorites.',
-        showConfirmButton: false,
-        timer: 1500,
-      });
-    }
-  },
+      // Update the backend database
+      try {
+        await fetch(`http://localhost:5000/recipes/${recipe.id}`, {
+          method: "PATCH", // Use PATCH to update existing resource
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ isFavorite: recipe.isFavorite }),
+        });
+      } catch (error) {
+        console.error("Failed to update favorite status:", error);
+      }
+
+      if (recipe.isFavorite) {
+        await Swal.fire({
+          icon: "success",
+          title: "Added to Favorites!",
+          text: "This recipe has been added to your favorites.",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
+    },
   },
 };
 </script>
@@ -139,4 +162,7 @@ export default {
   transform: scale(1.1);
 }
 
+.text-justify {
+  text-align: justify;
+}
 </style>
