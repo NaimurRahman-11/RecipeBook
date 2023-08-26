@@ -1,7 +1,7 @@
 <template>
-  <div class="row row-cols-1 row-cols-md-3 g-4 mt-5 mb-5">
-    <div v-for="recipe in recipes" :key="recipe.id" class="col">
-      <div class="card h-100">
+  <div class="row row-cols-1 row-cols-md-3 g-5 mt-5 mb-5">
+    <div v-for="recipe in recipes" :key="recipe.id" class="col ">
+      <div class="card h-100 shadow">
         <img
           :src="recipe.image"
           class="card-img-top"
@@ -91,4 +91,13 @@ export default {
   transition: color 0.3s ease-in-out; /* Apply smooth color transition */
   cursor: pointer;
 }
+
+.card {
+  transition: transform 0.3s linear; /* Use linear transition for smoother in and out */
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
 </style>

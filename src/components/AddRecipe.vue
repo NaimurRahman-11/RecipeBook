@@ -1,5 +1,5 @@
 <template>
-  <div class="container mt-5">
+  <div class="container mt-5 shadow p-3">
     <h2 class="mb-4">Add a New Recipe</h2>
     <form @submit="onSubmit" class="row g-3">
       <div class="col-md-6">

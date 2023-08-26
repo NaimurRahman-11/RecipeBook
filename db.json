@@ -19,14 +19,7 @@
       "name": "Murgi Bhuna",
       "image": "https://grubvineweb.com/wp-content/uploads/2022/08/Chicken-Bhuna-Masala-Recipe-Main-Image-Grubvineweb.webp",
       "description": "I don't like Murgi Bhuna much!",
-      "isFavorite": true
-    },
-    {
-      "id": 4,
-      "name": "Fish Curry",
-      "image": "https://www.tamarindnthyme.com/wp-content/uploads/2020/10/Untitled-design-91-728x546.jpg.webp",
-      "description": "Fish Curry is for pure Bengali!",
-      "isFavorite": true
+      "isFavorite": false
     }
   ]
 }
